@@ -1,0 +1,24 @@
+﻿Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),,Amazon Virtual Private Cloud (VPC),0,987.3,11847.6,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),s3,S3 Standard,0,263.44,3161.28,USD,S3 Standard storage (10 TB per month)
+My Estimate,US East (N. Virginia),s3,Data Transfer,0,0,0,USD,"DT Inbound: Not selected (0 TB per month), DT Outbound: Amazon CloudFront (10 TB per month)"
+My Estimate,US East (N. Virginia),,Amazon EC2,0,9351.124,112213.49,USD,"Operating system (Linux), Storage amount (1 TB), DT Inbound: Not selected (0 TB per month), DT Outbound: Internet (1 TB per month), DT Intra-Region: (1 TB per month), Workload (Daily, (Workload days: Monday, Tuesday, Wednesday, Thursday, Friday, Baseline: 16, Peak: 32, Duration of peak: 8 Hr 30 Min)), Advance EC2 instance (t3a.large), Pricing strategy (All Reserved 1 Year  None upfront), Snapshot Frequency (2x Daily), Amount changed per snapshot (3 GB)"
+My Estimate,US East (N. Virginia),,Amazon RDS for SQL server,0,8187.52,98250.24,USD,"Storage for each RDS instance (General Purpose SSD (gp2)), Storage amount (1 TB), Number of nodes (4), Instance type (db.m4.xlarge), Deployment option (Multi-AZ), License (License included), Database edition (Standard), Pricing strategy (OnDemand), Additional backup storage (1 TB)"
+My Estimate,US East (N. Virginia),,Application Load Balancer,0,1000.1,12001.2,USD,Number of Application Load Balancers (4)
+,,,,,,,,
+,,,,,,,,
+Changes,Reason,,,,,,,
+"1. RDS from 2 nodes to 4 nodes
+",To serve data to more number of instances and hence supporting more number of users and decreasing load and decreasing latency,,,,,,,
+"2. RDS M4 Large to M4 X large
+",To process data faster and decrease the response times to decrease the latency,,,,,,,
+"3. EC2 upgraded to t3a.large from t3.medium
+","To serve more number of users, handle processes more efficiently and decrease latency hence improving user experience",,,,,,,
+"4. EC2 configured for daily spike patterns for 8 hours reaching upto 48 instances during peak time
+","When during peak times, more number of instances serve more users hence avoiding point of failures and server crashes",,,,,,,
+5. EC2 instances are all reserved so to be available at all times ,To make instances available all time,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+Acknowledgement,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,
